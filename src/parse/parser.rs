@@ -682,7 +682,7 @@ impl<'help, 'app> Parser<'help, 'app> {
                 };
 
                 // Collect the external subcommand args
-                let mut sc_m = ArgMatcher::default();
+                let mut sc_m = ArgMatcher::new(&self.app);
 
                 while let Some((v, _)) = it.next(None) {
                     if v.to_str().is_none() && !self.is_set(AS::StrictUtf8) {
