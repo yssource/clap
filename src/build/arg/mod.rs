@@ -1714,6 +1714,7 @@ impl<'help> Arg<'help> {
     }
 
     /// Specifies the name of the [`ArgGroup`] the argument belongs to.
+    /// **The group must be defined separately via `App::group`.**
     ///
     /// # Examples
     ///
@@ -1729,7 +1730,7 @@ impl<'help> Arg<'help> {
     /// was one of said arguments.
     ///
     /// ```rust
-    /// # use clap::{App, Arg};
+    /// # use clap::{App, Arg, ArgGroup};
     /// let m = App::new("prog")
     ///     .arg(Arg::new("debug")
     ///         .long("debug")
@@ -1737,6 +1738,7 @@ impl<'help> Arg<'help> {
     ///     .arg(Arg::new("verbose")
     ///         .long("verbose")
     ///         .group("mode"))
+    ///     .group(ArgGroup::new("mode"))
     ///     .get_matches_from(vec![
     ///         "prog", "--debug"
     ///     ]);
@@ -1749,6 +1751,7 @@ impl<'help> Arg<'help> {
     }
 
     /// Specifies the names of multiple [`ArgGroup`]'s the argument belongs to.
+    /// **The groups must be defined separately via `App::group`.**
     ///
     /// # Examples
     ///
@@ -1764,7 +1767,7 @@ impl<'help> Arg<'help> {
     /// was one of said arguments.
     ///
     /// ```rust
-    /// # use clap::{App, Arg};
+    /// # use clap::{App, Arg, ArgGroup};
     /// let m = App::new("prog")
     ///     .arg(Arg::new("debug")
     ///         .long("debug")
@@ -1772,6 +1775,8 @@ impl<'help> Arg<'help> {
     ///     .arg(Arg::new("verbose")
     ///         .long("verbose")
     ///         .groups(&["mode", "verbosity"]))
+    ///     .group(ArgGroup::new("mode"))
+    ///     .group(ArgGroup::new("verbosity"))
     ///     .get_matches_from(vec![
     ///         "prog", "--debug"
     ///     ]);
@@ -3796,7 +3801,7 @@ impl<'help> Arg<'help> {
     ///     ]);
     ///
     /// assert!(res.is_ok());
-    /// assert_eq!(res.unwrap().value_of("config"), None);
+    /// assert_eq!(res.unwrap().value_of("cfg"), Some(""));
     /// ```
     /// [`ArgSettings::TakesValue`]: ./enum.ArgSettings.html#variant.TakesValue
     #[inline]
