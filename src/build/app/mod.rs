@@ -2608,6 +2608,7 @@ impl<'help> App<'help> {
             self.get_subcommands()
                 .flat_map(|s| s.aliases.iter().map(|&(n, _)| n)),
         )
+    }
 
     #[inline]
     pub(crate) fn valid_ids_for_args(&self) -> Vec<Id> {

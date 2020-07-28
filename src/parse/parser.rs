@@ -1059,7 +1059,7 @@ impl<'help, 'app> Parser<'help, 'app> {
         }
 
         if let Some(sc) = self.app.subcommands.iter_mut().find(|s| s.name == sc_name) {
-            let mut sc_matcher = ArgMatcher::default();
+            let mut sc_matcher = ArgMatcher::new(sc);
             // Display subcommand name, short and long in usage
             let mut sc_names = sc.name.clone();
             let mut flag_subcmd = false;
