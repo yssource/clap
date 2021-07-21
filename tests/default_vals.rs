@@ -5,6 +5,7 @@ use clap::{App, Arg, ErrorKind};
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -23,6 +24,7 @@ fn opts() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -47,6 +49,7 @@ fn opt_without_value_fail() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -65,6 +68,7 @@ fn opt_user_override() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -83,6 +87,7 @@ fn positionals() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -103,6 +108,7 @@ fn positional_user_override() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -124,6 +130,7 @@ fn osstr_opts() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -145,6 +152,7 @@ fn osstr_opt_user_override() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -166,6 +174,7 @@ fn osstr_positionals() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -560,6 +569,7 @@ fn default_ifs_arg_present_order() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -598,6 +608,7 @@ fn conditional_reqs_fail() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -638,6 +649,7 @@ fn conditional_reqs_pass() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -661,6 +673,7 @@ fn multiple_defaults() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -684,6 +697,7 @@ fn multiple_defaults_override() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -739,6 +753,7 @@ fn issue_1050_num_vals_and_defaults() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
@@ -758,6 +773,7 @@ fn required_groups_with_default_values() {
     any(
         feature = "default_value",
         feature = "default_value_conditional",
+        feature = "default_value_missing",
         feature = "full"
     ),
     test
